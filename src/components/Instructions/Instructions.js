@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import store, { ADD_INSTRUCTIONS, ADD_RECIPE } from '../../store';
+import store, { ADD_INSTRUCTIONS, ADD_RECIPE, RESET } from '../../store';
 
 class Instructions extends Component {
   constructor(props) {
@@ -39,7 +39,10 @@ class Instructions extends Component {
   create() {
     // Create new recipe in Redux state
     store.dispatch({
-      type: ADD_RECIPE
+      type: ADD_RECIPE,
+    });
+    store.dispatch({
+      type: RESET
     })
   }
   render() {

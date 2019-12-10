@@ -2,7 +2,9 @@ import React from "react";
 import "./RecipeCard.css";
 
 let RecipeCard = props => {
+  console.log(props);
   const {
+    index,
     name,
     category,
     authorFirst,
@@ -34,12 +36,13 @@ let RecipeCard = props => {
         <ol className="list">{instructionsDisplay}</ol>
       </div>
       <svg
-        className="delete"
+        className='delete'
         width="60"
         height="60"
         viewBox="0 0 60 60"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        onClick={() => props.delete(index)}
       >
         <path
           d="M2.35352 57.3536L57.3535 3.3409M2.35352 2.64648L57.3535 56.6592"
